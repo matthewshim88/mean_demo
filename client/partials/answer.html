@@ -1,0 +1,11 @@
+<a class="btn" href="#/dashboard">Home</a>
+<a class="btn" href="/logout">Logout</a>
+<h2>{{question.question}}</h2>
+<h4>{{question.desc}}</h4>
+<a class="btn btn-primary" href="#/question/{{question._id}}">Back to the Question</a>
+<form ng-submit="createAnswer()">
+  <p>Your Answer: <input type="text" ng-model="answer.text"></p>
+  <p>Supporting Details for your answer (optional): <input type="text" ng-model="answer.details"></p>
+  <input type="submit" class="btn btn-primary">
+</form>
+<a class="btn btn-primary" href="#/dashboard">Cancel</a>

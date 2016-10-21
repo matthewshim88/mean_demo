@@ -1,0 +1,23 @@
+
+<h2 ng-model="currUser">Welcome {{currUser.name}}!</h2>
+<a class="btn btn-primary" href='/logout'>logout</a>
+<div ng-controller="dashController">
+  <a class="btn btn-primary" href="#/question"> Ask a Question</a><br></br>
+  <p><input placeholder="Search..." type="text" ng-model="filter_question"></p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Question</th>
+        <th>Answers</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+      <tr ng-repeat="question in questions | filter: filter_question track by $index">
+        <th>{{question.question}}</th>
+        <th>{{question._answers.length}}</th>
+        <th><a href="#/question/{{question._id}}">Show</a> <a href="#/answer/{{question._id}}">Answer</a></th>
+      </tr>
+  </table>
+
+
+</div>
