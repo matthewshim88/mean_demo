@@ -16,6 +16,7 @@ app.controller('dashController', function($scope, sessionFactory, questionFactor
   $scope.index();
 
   $scope.add = function(){
+
     if($scope.question.question.length < 10){
       alert("Question length must be at least 10 characters!");
     }

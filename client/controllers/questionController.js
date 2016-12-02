@@ -2,7 +2,6 @@ app.controller('questionController', function($scope, $routeParams, sessionFacto
 
   $scope.questionID = $routeParams.id;
 
-
   $scope.index = function(){
     questionFactory.showOne($scope.questionID, function(data){
       $scope.question = data;
@@ -34,15 +33,11 @@ app.controller('questionController', function($scope, $routeParams, sessionFacto
       }
     };
 
-
   $scope.addLike = function(id){
     var ansID = {id:id}
     questionFactory.addLike(ansID, function(){
       $scope.index();
     })
   };
-
-
-
 
 })

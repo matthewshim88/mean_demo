@@ -3,10 +3,12 @@
   <a class="btn btn-primary" href="#/dashboard">Home</a>
   <a class="btn btn-primary" href="/logout">Logout</a>
   <h2>New Question</h2>
-  <form ng-submit ="add()">
-    <p>Question: <textarea rows="6" cols="40" type="text" ng-model="question.question"></textarea></p>
+  <form ng-submit ="add()" name="questionForm">
+    <p>Question: <textarea rows="6" cols="40" type="text" name="questionBox" ng-model="question.question" ng-minlength="10" required></textarea></p>
+    <span ng-show="questionForm.questionBox.$error.required"></span>
     <p>Description (optional): <textarea rows="6" cols="30" type="text" ng-model="question.desc"></textarea></p>
     <input class="btn btn-primary" type="submit" value="Submit">
+
   </form>
   <a class="btn btn-primary" href="#/dashboard">Cancel</a>
 </div>

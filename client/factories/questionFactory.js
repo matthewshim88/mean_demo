@@ -8,8 +8,7 @@ app.factory('questionFactory', ["$http", "$location", function($http, $location)
       callback(returnQuestion.data);
     });
   }
-
-
+  
   factory.showOne = function(questionID, callback){
     $http.get('/question/getOne/' + questionID)
     .then(function(returnedData){
